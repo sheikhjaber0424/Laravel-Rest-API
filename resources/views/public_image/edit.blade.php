@@ -20,6 +20,27 @@
                         @enderror
                     </div>
 
+                    <div class="form-group mt-3">
+                        <label for="category">Category</label>
+                        <input class="form-control @error('category') is-invalid @enderror" type="text" name="category"
+                            id="category" value="{{ $item->category }}" placeholder="Category">
+                        @error('category')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
+                            rows="2" placeholder="Description">{{ $item->description }}</textarea>
+
+                        @error('description')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
 
 
 

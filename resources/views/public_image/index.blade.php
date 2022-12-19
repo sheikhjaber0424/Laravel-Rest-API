@@ -7,6 +7,8 @@
                 <thead>
                     <tr>
                         <th scope="col">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Description</th>
                         <th scope="col">image</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -15,6 +17,9 @@
                     @foreach ($items as $item)
                         <tr>
                             <td>{{ $item->title }}</td>
+                            <td>{{ $item->category }}</td>
+                            <td>{{ $item->description }}</td>
+
                             <td> <img src="{{ $item->image }}" width="80px" height="60px" alt=""> </td>
                             <td> <a href="{{ route('public.edit', $item) }}"><button
                                         class="btn btn-primary">Edit</button></a>

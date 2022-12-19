@@ -29,7 +29,9 @@ class MainController extends Controller
         $valid = $request->validate([
 
             'title' => ['required', 'string', 'max:255'],
-            'image' => ['required', 'mimes:png,jpg,jpeg', 'max:2048'],
+            'category' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'image' => ['required', 'image'],
         ]);
 
 
@@ -50,7 +52,9 @@ class MainController extends Controller
         $valid = $request->validate([
 
             'title' => ['required', 'string', 'max:255'],
-            'image' => ['required', 'mimes:png,jpg,jpeg', 'max:2048'],
+            'category' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'image' => ['required', 'image'],
         ]);
 
         if ($request->hasFile('image')) {

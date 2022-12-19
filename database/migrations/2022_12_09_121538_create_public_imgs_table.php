@@ -16,6 +16,8 @@ class CreatePublicImgsTable extends Migration
         Schema::create('public_imgs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('category');
+            $table->text('description')->nullable();
             $table->string('image');
             $table->timestamps();
         });

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Resources\ImageResource;
+use App\Models\PublicImg;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//normal route
+// Route::get('img_data', [Api\MainController::class, 'index']);
+
+//Api resource route
+Route::apiResource('images', Api\MainController::class);
